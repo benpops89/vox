@@ -19,6 +19,7 @@ source "arm" "dietpi" {
     size         = "128M"
     mountpoint   = "/boot"
   }
+
   image_partitions {
     name         = "root"
     type         = "83"
