@@ -18,6 +18,12 @@ variable "dietpi_global_password" {
   sensitive   = true
 }
 
+variable "dietpi_ssh_pubkey" {
+  type        = string
+  description = "The SSH public key to be added to authorized_keys"
+  default     = env("DIETPI_SSH_PUBKEY")
+}
+
 variable "dietpi_image_url" {
   type        = string
   description = "The URL of the base DietPi image to download."

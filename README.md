@@ -41,6 +41,7 @@ Export the following environment variables before building. You can add these to
 export WIFI_SSID="MyNetwork"
 export WIFI_PASSWORD="SuperSecretPassword"
 export DIETPI_GLOBAL_PASSWORD="ChangeMeImmediately"
+export DIETPI_SSH_PUBKEY="$(cat ~/.ssh/id_rsa.pub)"
 ```
 
 ### Build Command

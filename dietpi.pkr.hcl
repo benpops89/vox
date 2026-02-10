@@ -48,6 +48,7 @@ build {
   provisioner "file" {
     content = templatefile("${path.root}/config/dietpi.txt.pkrtpl", {
       dietpi_global_password      = var.dietpi_global_password
+      dietpi_ssh_pubkey           = var.dietpi_ssh_pubkey
       dietpi_locale               = var.dietpi_locale
       dietpi_keyboard_layout      = var.dietpi_keyboard_layout
       dietpi_timezone             = var.dietpi_timezone
