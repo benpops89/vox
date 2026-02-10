@@ -1,0 +1,10 @@
+default_provider = "pass"
+
+[providers.pass]
+type = "password-store"
+prefix = "fnox/"
+
+[secrets]
+WIFI_SSID= { provider = "pass", value = "WIFI_SSID" }
+WIFI_PASSWORD= { provider = "pass", value = "WIFI_PASSWORD" }
+DIETPI_GLOBAL_PASSWORD= { provider = "pass", value = "DIETPI_GLOBAL_PASSWORD" }

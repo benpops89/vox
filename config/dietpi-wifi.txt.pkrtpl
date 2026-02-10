@@ -1,0 +1,16 @@
+# WiFi Credentials
+# - Entry 0 is the first priority.
+# - You can add more entries (up to 4) by copying the block and changing the index [0] -> [1] etc.
+
+aWIFI_SSID[0]='${wifi_ssid}'
+aWIFI_KEY[0]='${wifi_password}'
+aWIFI_KEYMGR[0]='WPA-PSK'
+aWIFI_PROTO[0]=''
+aWIFI_PAIRWISE[0]=''
+aWIFI_AUTH_ALG[0]=''
+aWIFI_EAP[0]=''
+aWIFI_IDENTITY[0]=''
+aWIFI_PASSWORD[0]=''
+aWIFI_PHASE1[0]=''
+aWIFI_PHASE2[0]=''
+aWIFI_CERT[0]=''

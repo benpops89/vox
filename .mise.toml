@@ -1,0 +1,9 @@
+[tasks.build]
+description = "Build the custom Diet Pi image"
+run = '''
+docker run --rm --privileged \
+    -v /dev:/dev \
+    -v ${PWD}:/build \
+    mkaczanowski/packer-builder-arm:latest \
+    build -var-file=variables.pkrvars.hcl .
+'''
