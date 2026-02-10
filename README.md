@@ -2,8 +2,7 @@
   <h1>📡 VOX</h1>
   <h3>Open Source DIY Smart Speaker</h3>
   <p>
-    A comprehensive project to design, build, and configure a privacy-focused smart speaker.<br>
-    From CAD models to the operating system and audio software stack.
+    Open-source DIY smart speaker for Home Assistant—from CAD to code.
   </p>
 </div>
 
