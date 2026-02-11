@@ -17,7 +17,7 @@ source "arm" "dietpi" {
     start_sector = "2048"
     filesystem   = "fat"
     size         = "128M"
-    mountpoint   = "/boot"
+    mountpoint   = "/boot/firmware"
   }
 
   image_partitions {
