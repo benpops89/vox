@@ -98,3 +98,9 @@ variable "dietpi_disable_ssh_password" {
   description = "Disable SSH password logins (0=allow all, 1=disable all, root=disable root only)"
   default     = "0"
 }
+
+variable "dietpi_apt_packages" {
+  type        = list(string)
+  description = "APT packages to install on first boot"
+  default     = []
+}

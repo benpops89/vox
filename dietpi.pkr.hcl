@@ -59,7 +59,13 @@ build {
       dietpi_setup_automated      = var.dietpi_setup_automated
       dietpi_enable_ipv6          = var.dietpi_enable_ipv6
       dietpi_disable_ssh_password = var.dietpi_disable_ssh_password
+      dietpi_apt_packages         = join(" ", var.dietpi_apt_packages)
     })
     destination = "/boot/dietpi.txt"
+  }
+
+  provisioner "file" {
+    source      = "config/config.txt"
+    destination = "/boot/firmware/config.txt"
   }
 }

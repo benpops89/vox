@@ -1,0 +1,6 @@
+
+# ==============================
+# HiFiBerry MiniAmp Configuration
+# ==============================
+
+dtoverlay=hifiberry-dac
