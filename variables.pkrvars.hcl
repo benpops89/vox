@@ -13,5 +13,9 @@ dietpi_enable_ipv6          = "0"
 dietpi_disable_ssh_password = "1"
 
 dietpi_apt_packages = [
-  "alsa-utils"
+  "alsa-utils",
+]
+
+dietpi_install_software = [
+  "192"
 ]

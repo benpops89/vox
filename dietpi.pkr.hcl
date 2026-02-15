@@ -1,4 +1,13 @@
-source "arm" "dietpi" {
+packer {
+  required_plugins {
+    cross = {
+      version = "~> 1"
+      source  = "github.com/michalfita/cross"
+    }
+  }
+}
+
+source "cross" "dietpi" {
   file_urls          = [var.dietpi_image_url]
   file_checksum_type = "sha256"
   file_checksum      = var.dietpi_image_checksum
@@ -9,7 +18,6 @@ source "arm" "dietpi" {
   image_build_method    = "reuse"
   image_path            = var.dietpi_image_path
   image_size            = "2G"
-
 
   image_partitions {
     name         = "boot"
@@ -34,7 +42,7 @@ source "arm" "dietpi" {
 }
 
 build {
-  sources = ["source.arm.dietpi"]
+  sources = ["source.cross.dietpi"]
 
   # Inject configuration files
   provisioner "file" {
@@ -60,6 +68,7 @@ build {
       dietpi_enable_ipv6          = var.dietpi_enable_ipv6
       dietpi_disable_ssh_password = var.dietpi_disable_ssh_password
       dietpi_apt_packages         = join(" ", var.dietpi_apt_packages)
+      dietpi_install_software     = join(" ", var.dietpi_install_software)
     })
     destination = "/boot/dietpi.txt"
   }
@@ -67,5 +76,17 @@ build {
   provisioner "file" {
     source      = "config/config.txt"
     destination = "/boot/firmware/config.txt"
+  }
+
+  ## Snapcast client config
+  provisioner "file" {
+    source      = "config/snapclient"
+    destination = "/etc/default/snapclient"
+  }
+
+  ## Alsa config for stereo downmix to mono
+  provisioner "file" {
+    source      = "config/asound.conf"
+    destination = "/etc/asound.conf"
   }
 }

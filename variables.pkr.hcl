@@ -104,3 +104,9 @@ variable "dietpi_apt_packages" {
   description = "APT packages to install on first boot"
   default     = []
 }
+
+variable "dietpi_install_software" {
+  type        = list(string)
+  description = "Software packages to install on first boot"
+  default     = []
+}

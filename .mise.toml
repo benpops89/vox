@@ -1,16 +1,12 @@
 [tasks.build]
-description = "Build the custom Diet Pi image"
+description = "Build the custom Diet Pi image natively"
 run = '''
 # Load local SSH public key
 export DIETPI_SSH_PUBKEY=$(cat ~/.ssh/id_rsa.pub)
 
-docker run --rm --privileged \
-    -v /dev:/dev \
-    -v ${PWD}:/build \
-    -e WIFI_SSID \
-    -e WIFI_PASSWORD \
-    -e DIETPI_GLOBAL_PASSWORD \
-    -e DIETPI_SSH_PUBKEY \
-    mkaczanowski/packer-builder-arm:latest \
-    build -var-file=variables.pkrvars.hcl .
+# Initialize plugins
+packer init .
+
+# Run build natively (requires sudo for mounting)
+sudo -E $(which packer) build -var-file=variables.pkrvars.hcl .
 '''
